@@ -4,8 +4,14 @@
 .blue {
   background-color: blue;
 }
+.blue p {
+  border: 5px solid black;
+}
 .pink {
   background-color: pink;
+}
+div {
+  border: 10px solid green;
 }
 p {
   font-style: italic;
