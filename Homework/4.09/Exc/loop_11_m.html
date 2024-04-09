@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.clear();
+      let rand = Math.floor(Math.random() * 10);
+      let input = -1;
+      let count = 0;
+      console.time("Time taken");
+      do {
+        input = parseInt(prompt("Enter a numer"));
+        count++;
+        if (input < rand) {
+          console.log("Too low");
+        } else if (input > rand) {
+          console.log("Too high");
+        } else if (input == rand) {
+          console.log("Correct");
+        }
+      } while (input != rand && !isNaN(input));
+      console.log("Guesses " + count);
+      console.timeEnd("Time taken");
+    </script>
+  </body>
+</html>

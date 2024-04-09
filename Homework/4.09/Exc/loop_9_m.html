@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.clear();
+      let min = Number.MAX_SAFE_INTEGER;
+      let max = Number.MIN_SAFE_INTEGER;
+      let input = parseInt(prompt("Enter a positive number or other to exit"));
+      while (input > 0) {
+        if (input < min) {
+          min = input;
+        }
+        if (input > max) {
+          max = input;
+        }
+        input = parseInt(prompt("Enter a positive number or other to exit"));
+      }
+      console.log("Max " + max + " Min " + min);
+    </script>
+  </body>
+</html>

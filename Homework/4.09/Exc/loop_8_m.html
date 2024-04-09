@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.clear();
+      let input = parseInt(prompt("Enter a number"));
+      let count = 1;
+      let total = 1;
+      do {
+        total *= count;
+        count++;
+      } while (count <= input);
+      console.log(total);
+
+      let index = 0;
+      let max = Number.MIN_SAFE_INTEGER;
+      let min = Number.MAX_SAFE_INTEGER;
+      do {
+        let input = parseInt(prompt("Enter a number"));
+        if (input < min) {
+          min = input;
+        }
+        if (input > max) {
+          max = input;
+        }
+        index++;
+      } while (index < 5);
+      console.log("Max " + max + " Min " + min);
+    </script>
+  </body>
+</html>
