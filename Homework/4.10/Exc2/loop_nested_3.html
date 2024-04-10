@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.clear();
+      let table = "";
+      for (let outer = 1; outer <= 10; outer++) {
+        let row = "";
+        for (let inner = 1; inner <= 10; inner++) {
+          row = `${row} ${inner * outer}`;
+        }
+        table = `${table}${row}\n`;
+      }
+      console.log(table);
+    </script>
+  </body>
+</html>

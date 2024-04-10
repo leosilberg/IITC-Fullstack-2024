@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.clear();
+      function checkDup(arr1, arr2) {
+        let dups = [];
+        for (let i of arr1) {
+          for (let o of arr2) {
+            if (i === o) {
+              dups.push(i);
+            }
+          }
+        }
+        return dups;
+      }
+      console.log(checkDup([1, 2, 3], [2, 4, 5]));
+    </script>
+  </body>
+</html>

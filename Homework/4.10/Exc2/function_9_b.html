@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.clear();
+      function fib(num) {
+        let prev = 0;
+        let sum = 1;
+        for (let index = 0; index < num; index++) {
+          console.log(sum);
+          sum = sum + prev;
+          prev = sum - prev;
+        }
+      }
+      fib(5);
+    </script>
+  </body>
+</html>

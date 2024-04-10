@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.clear();
+      function parse(str) {
+        let len = 0;
+        for (const iterator of str.split(" , ")) {
+          const value = iterator.split(":")[1];
+          if (value.length > len) {
+            len = value.length;
+          }
+        }
+        return len;
+      }
+      console.log(parse("name:nathan , family:krasney , city:haifa"));
+    </script>
+  </body>
+</html>
