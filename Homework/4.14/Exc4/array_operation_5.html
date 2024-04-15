@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let nums = [4, 8, 1, 9];
+      let input = 8;
+      index = 0;
+      do {
+        index = nums.indexOf(input, index);
+        if (index !== -1) {
+          nums[index]++;
+        }
+      } while (index !== -1);
+      console.log(nums);
+    </script>
+  </body>
+</html>

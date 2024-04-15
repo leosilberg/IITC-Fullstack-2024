@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function getBook(books, name) {
+        for (const book of books) {
+          if (book.name === name) {
+            return book;
+          }
+        }
+        return null;
+      }
+      let books = [
+        {
+          name: "Art of War",
+          pages: 10,
+        },
+        {
+          name: "Harry Potter",
+          pages: 10,
+        },
+      ];
+      console.log(getBook(books, "Harry Potter"));
+    </script>
+  </body>
+</html>

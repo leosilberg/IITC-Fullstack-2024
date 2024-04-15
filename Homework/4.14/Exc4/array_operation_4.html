@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function deleteBook(books, name) {
+        for (let index = 0; index < books.length; index++) {
+          if (books[index].name === name) {
+            books.splice(index, 1);
+            return true;
+          }
+        }
+        return false;
+      }
+      let books = [
+        {
+          name: "Art of War",
+          pages: 10,
+        },
+        {
+          name: "Harry Potter",
+          pages: 10,
+        },
+      ];
+      console.log(deleteBook(books, "Harry Potter"));
+    </script>
+  </body>
+</html>
