@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="calculator">
+        <div class="result-box">
+          <button onclick="clearCalc()">CE</button>
+          <div><h1 id="result">0</h1></div>
+        </div>
+        <div class="num-pad">
+          <button onclick="inputNum(7)">7</button>
+          <button onclick="inputNum(8)">8</button>
+          <button onclick="inputNum(9)">9</button>
+          <button onclick="inputNum(4)">4</button>
+          <button onclick="inputNum(5)">5</button>
+          <button onclick="inputNum(6)">6</button>
+          <button onclick="inputNum(1)">1</button>
+          <button onclick="inputNum(2)">2</button>
+          <button onclick="inputNum(3)">3</button>
+          <button onclick="inputNum(0)">0</button>
+          <button onclick="inputNum('.')">.</button>
+          <button onclick="equal()" class="operation">=</button>
+        </div>
+        <div class="operations">
+          <button onclick="operator('/')" class="operation">/</button>
+          <button onclick="operator('*')" class="operation">*</button>
+          <button onclick="operator('-')" class="operation">-</button>
+          <button onclick="operator('+')" class="operation">+</button>
+        </div>
+      </div>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>
