@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Days+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact Me</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="hero">
+        <img src="./images/rob.jpeg" alt="" />
+        <h2>Hi! I'm Rob! I teach people how to code and make websites.</h2>
+      </section>
+      <section id="about">
+        <div class="card">
+          <h2>About Me</h2>
+          <div class="content">
+            <img src="./images/rob-aboutme.jpeg" alt="   " />
+            <p>
+              Almost a decade ago I was busy teaching math to teenagers at three
+              schools in London and Cambridge. Since I’m a bit of a coding geek,
+              I also built websites on the side for friends and family. I soon
+              learned that web development was a very lucrative career choice,
+              so I gave up my successful (and sometimes stressful) job as a
+              teacher to build websites. Today, I couldn’t be happier with that
+              decision <br /><br />
+              After building websites for about seven years, I noticed a lot of
+              people struggling to learn how to code. I wanted others to have
+              the same freedoms that I enjoyed, so I started teaching web
+              development <br /><br />I'm familiar with HTML5, CSS3, JavaScript,
+              PHP7 and MySQL. Checkout some of the projects I've done below.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="content">
+          <div class="card">
+            <img src="./images/earth.jpeg" alt="" />
+            <div class="info">
+              <h3>Earth Facts</h3>
+              <p>A HTML project about some facts about the earth.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./images/bbcnews.png" alt="" />
+            <div class="info">
+              <h3>BBC News Clone</h3>
+              <p>
+                This project is a clone of the BBC news website from the Web Dev
+                2.0 Course.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Use this form to get in touch. I would love to hear from you!</p>
+        <form>
+          <div class="content-left">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your name" />
+            <label for="subject">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              placeholder="Reason for your message"
+            />
+            <label for="email">Email Address</label>
+            <input type="text" id="email" placeholder="Your email address" />
+          </div>
+          <div class="content-right">
+            <label for="message">Message</label>
+            <textarea
+              type="text"
+              id="message"
+              placeholder="Enter a message"
+            ></textarea>
+          </div>
+        </form>
+        <button type="submit">SUBMIT</button>
+      </section>
+      <footer>
+        <p>This site 2024</p>
+      </footer>
+    </main>
+  </body>
+</html>
