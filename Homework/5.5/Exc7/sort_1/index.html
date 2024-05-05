@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sort(arr) {
+        let temp = [];
+
+        for (let index = 0; index < arr.length; index++) {
+          let min = Number.MAX_SAFE_INTEGER;
+          for (let inner = 0; inner < arr.length; inner++) {
+            if (arr[inner] < min && !temp.includes(arr[inner])) {
+              min = arr[inner];
+            }
+          }
+          temp.push(min);
+        }
+        return temp;
+      }
+      console.log(sort([6, -8, 4, 3, 2, 1]));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sort(arr) {
+        for (let index = 0; index < arr.length - 1; index++) {
+          let min = index;
+          for (let inner = index + 1; inner < arr.length; inner++) {
+            if (arr[inner] < arr[min]) {
+              min = inner;
+            }
+          }
+          if (min != index) {
+            let temp = arr[index];
+            arr[index] = arr[min];
+            arr[min] = temp;
+          }
+        }
+        return arr;
+      }
+      console.log(sort([2, 6, -8, 4, 3, 2, 2, 1]));
+    </script>
+  </body>
+</html>

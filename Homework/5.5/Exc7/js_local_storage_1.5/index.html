@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="display: flex; flex-direction: column; gap: 1rem">
+    <p>Counter 1</p>
+    <p id="count-1"></p>
+    <p>Counter 2</p>
+    <p id="count-2"></p>
+    <button onclick="incr1()">Counter 1</button
+    ><button onclick="incr2()">Counter 2</button>
+    <script>
+      let count1 =
+        localStorage.getItem("count_1") !== null
+          ? parseInt(localStorage.getItem("count_1"))
+          : 0;
+      let count2 =
+        localStorage.getItem("count_2") !== null
+          ? parseInt(localStorage.getItem("count_2"))
+          : 0;
+      const elem1 = document.querySelector("#count-1");
+      const elem2 = document.querySelector("#count-2");
+      display(elem1, count1);
+      display(elem2, count2);
+      function save(key, value) {
+        localStorage.setItem(key, value);
+      }
+      function display(elem, val) {
+        elem.innerText = val;
+      }
+      function incr1() {
+        count1 += 1;
+        save("count_1", count1);
+        display(elem1, count1);
+      }
+      function incr2() {
+        count2 += 1;
+        save("count_2", count2);
+        display(elem2, count2);
+      }
+    </script>
+  </body>
+</html>

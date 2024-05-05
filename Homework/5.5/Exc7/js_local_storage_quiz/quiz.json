@@ -1,0 +1,105 @@
+{
+    "questions": [
+      {
+        "question": "What does the acronym \"DOM\" stand for in JavaScript?",
+        "answers": [
+          "Document Object Model",
+          "Data Object Model",
+          "Dynamic Object Manipulation",
+          "Document Order Model"
+        ],
+        "correctAnswer": "Document Object Model"
+      },
+      {
+        "question": "How do you declare a variable in JavaScript?",
+        "answers": [
+          "var myVar = 10;",
+          "let myVar = 10;",
+          "const myVar = 10;",
+          "All of the above"
+        ],
+        "correctAnswer": "All of the above"
+      },
+      {
+        "question": "What is the purpose of the addEventListener method?",
+        "answers": [
+          "To create a new HTML element",
+          "To attach an event handler to an element",
+          "To modify the CSS styles of an element",
+          "To fetch data from an API"
+        ],
+        "correctAnswer": "To attach an event handler to an element"
+      },
+      {
+        "question": "Which operator is used for strict equality comparison in JavaScript?",
+        "answers": [
+          "==",
+          "===",
+          "!=",
+          "!=="
+        ],
+        "correctAnswer": "==="
+      },
+      {
+        "question": "What does the typeof operator return for an array?",
+        "answers": [
+          "\"array\"",
+          "\"object\"",
+          "\"array\"",
+          "\"undefined\""
+        ],
+        "correctAnswer": "\"object\""
+      },
+      {
+        "question": "How can you create a new array by extracting specific elements from an existing array?",
+        "answers": [
+          "Using the slice method",
+          "Using the splice method",
+          "Using the map method",
+          "Using the filter method"
+        ],
+        "correctAnswer": "Using the slice method"
+      },
+      {
+        "question": "What is the difference between null and undefined in JavaScript?",
+        "answers": [
+          "They are equivalent and can be used interchangeably",
+          "null represents an empty object, while undefined represents an uninitialized variable",
+          "null is a primitive value, while undefined is an object",
+          "There is no difference; they both mean the same thing"
+        ],
+        "correctAnswer": "null represents an empty object, while undefined represents an uninitialized variable"
+      },
+      {
+        "question": "How do you iterate over the elements of an array using a for...of loop?",
+        "answers": [
+          "for (let item of array) { ... }",
+          "for (let i = 0; i < array.length; i++) { ... }",
+          "for (let key in array) { ... }",
+          "for (let element in array) { ... }"
+        ],
+        "correctAnswer": "for (let item of array) { ... }"
+      },
+      {
+        "question": "What is the purpose of the map method in JavaScript?",
+        "answers": [
+          "To create a new array with modified elements",
+          "To filter out specific elements from an array",
+          "To sort an array in ascending order",
+          "To concatenate two arrays"
+        ],
+        "correctAnswer": "To create a new array with modified elements"
+      },
+      {
+        "question": "How can you prevent the default behavior of an event in JavaScript?",
+        "answers": [
+          "event.preventDefault();",
+          "event.stopPropagation();",
+          "return false;",
+          "All of the above"
+        ],
+        "correctAnswer": "All of the above"
+      }
+    ]
+  }
+  
