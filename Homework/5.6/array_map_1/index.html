@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="names"></ul>
+    <script>
+      let names = ["Alice", "Bob", "Charlie", "David"];
+      document.querySelector("#names").innerHTML = names
+        .map((name) => `<li>${name}</li>`)
+        .join("");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="nums" style="display: flex; gap: 2rem"></ul>
+    <script>
+      function findMin(index) {
+        let min = index;
+        for (let i = index + 1; i < arr.length; i++) {
+          if (arr[i] < arr[min]) {
+            min = i;
+          }
+        }
+        return min;
+      }
+      function swap(i, j) {
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+      }
+      let arr = [5, 12, 8, 3, 19, 7, 14, 1, 10, 6];
+      let index = 0;
+      let run = setInterval(() => {
+        document.querySelector("#nums").innerHTML = arr
+          .map((num) => `<li>${num}</li>`)
+          .join("");
+        if (index === arr.length) {
+          clearInterval(run);
+        }
+        let min = findMin(index);
+        if (min !== index) {
+          swap(min, index);
+        }
+        index++;
+      }, 2000);
+    </script>
+  </body>
+</html>
