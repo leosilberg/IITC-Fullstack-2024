@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="con">
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+    </div>
+
+    <div id="pad" style="background-color: green; height: 300px; width: 300px">
+      <div
+        id="child"
+        style="height: 100px; width: 200px; background-color: red"
+      ></div>
+    </div>
+
+    <script>
+      let elems = document.querySelectorAll("span");
+      elems.forEach((elem) => {
+        elem.addEventListener("click", (event) => {
+          console.log(event.target.innerText + " clicked");
+        });
+      });
+
+      let startTime;
+
+      const pad = document.querySelector("#pad");
+      pad.addEventListener("mousedown", (event) => {
+        startTime = performance.now(); 
+      });
+
+      pad.addEventListener("click", (event) => {
+        console.log(event.currentTarget.id);
+      });
+      pad.addEventListener("mouseup", (event) => {
+        console.log((performance.now() - startTime) / 1000);
+      });
+    </script>
+  </body>
+</html>
