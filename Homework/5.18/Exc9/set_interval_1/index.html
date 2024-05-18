@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+    <p id="time">0</p>
+    <script>
+      let currentTime = 0;
+      const elem = document.querySelector("#time");
+      let timer;
+      function start() {
+        timer = setInterval(() => {
+          currentTime += 1;
+          elem.innerText = currentTime;
+        }, 1000);
+      }
+      function stop() {
+        clearInterval(timer);
+        currentTime = 0;
+        elem.innerText = currentTime;
+      }
+    </script>
+  </body>
+</html>
