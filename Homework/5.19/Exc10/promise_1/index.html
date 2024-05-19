@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="clicked(true)">Success</button
+    ><button onclick="clicked(false)">Failure</button>
+    <script>
+      function getPromise(val) {
+        return new Promise((resolve, reject) => {
+          val ? resolve() : reject();
+        });
+      }
+
+      function clicked(val) {
+        getPromise(val)
+          .then(() => {
+            setTimeout(() => {
+              console.log("success");
+            }, 2000);
+          })
+          .catch(() => {
+            setTimeout(() => {
+              console.log("failure");
+            }, 3000);
+          });
+      }
+    </script>
+  </body>
+</html>

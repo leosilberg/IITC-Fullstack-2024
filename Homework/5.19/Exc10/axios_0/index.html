@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      @keyframes spin {
+        from {
+          transform: rotate(0turn);
+        }
+        to {
+          transform: rotate(1turn);
+        }
+      }
+
+      .spinner {
+        animation: spin 2000ms;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <i class="fa-solid fa-spinner fa-3x"></i>
+    <p></p>
+    <table></table>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
+      integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      document.querySelector("i").classList.add("spinner");
+      axios
+        .get("https://jsonplaceholder.typicode.com/comments")
+        .then(function (response) {
+          // handle success
+          document.querySelector("i").remove();
+          document.querySelector("p").innerText = response.data.length;
+          const table = document.querySelector("table");
+          for (const item of response.data) {
+            let row = `<tr>`;
+            for (const key in item) {
+              row += `<td>${item[key]}</td>`;
+            }
+            table.innerHTML += `${row}</tr>`;
+          }
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        });
+    </script>
+  </body>
+</html>
