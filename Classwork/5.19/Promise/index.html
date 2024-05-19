@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" />
+    <button onclick="submit()">Submit</button>
+    <p id="success"></p>
+    <p style="color: red" id="error"></p>
+    <script>
+      function isEvenAsync(val) {
+        return new Promise((resolve, reject) => {
+          if (isFinite(val)) {
+            resolve(val % 2 == 0);
+          } else {
+            reject("Not a number");
+          }
+        });
+      }
+
+      function submit() {
+        isEvenAsync(document.querySelector("input").value)
+          .then((result) => {
+            document.querySelector("#success").innerText = result;
+            document.querySelector("#error").innerText = "";
+          })
+          .catch((error) => {
+            document.querySelector("#success").innerText = "";
+            document.querySelector("#error").innerText = error;
+          });
+      }
+    </script>
+  </body>
+</html>
