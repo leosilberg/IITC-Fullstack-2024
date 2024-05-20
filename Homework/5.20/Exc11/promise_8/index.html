@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
+      integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      function getPosts() {
+        return axios.get("https://jsonplaceholder.typicode.com/posts");
+      }
+      function getUsers() {
+        return axios.get("https://jsonplaceholder.typicode.com/users");
+      }
+      function getComments() {
+        return axios.get("https://jsonplaceholder.typicode.com/comments");
+      }
+
+      Promise.all([getPosts(), getComments(), getUsers()]).then((result) => {
+        document.querySelector("body").innerHTML += `<p>${result.reduce(
+          (sum, item) => {
+            return (sum += item.data.length);
+          },
+          0
+        )}</p>`;
+      });
+    </script>
+  </body>
+</html>
