@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
+      integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      function getPosts() {
+        return axios.get("https://jsonplaceholder.typicode.com/posts");
+      }
+      function getUsers() {
+        return axios.get("https://jsonplaceholder.typicode.com/users");
+      }
+      function getComments() {
+        return axios.get("https://jsonplaceholder.typicode.com/comments");
+      }
+      async function getData() {
+        const posts = await getPosts();
+        document.querySelector(
+          "body"
+        ).innerHTML += `<p>${posts.data.length}</p>`;
+        const users = await getUsers();
+        document.querySelector(
+          "body"
+        ).innerHTML += `<p>${users.data.length}</p>`;
+        const comments = await getComments();
+        document.querySelector(
+          "body"
+        ).innerHTML += `<p>${comments.data.length}</p>`;
+      }
+      async function getAllData() {
+        const result = await Promise.all([
+          getPosts(),
+          getUsers(),
+          getComments(),
+        ]);
+        document.querySelector("body").innerHTML += `<p>${result.reduce(
+          (sum, item) => {
+            return (sum += item.data.length);
+          },
+          0
+        )}</p>`;
+      }
+      getData();
+      getAllData();
+    </script>
+  </body>
+</html>
