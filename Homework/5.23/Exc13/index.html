@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: grid;
+        gap: 2rem;
+        justify-items: start;
+      }
+      form {
+        display: flex;
+        gap: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="insert">
+      <label>Name</label>
+      <input type="text" name="name" required />
+      <label>Author</label>
+      <input type="text" name="author" required />
+      <label>Pages</label>
+      <input type="number" name="numPages" required />
+      <input type="submit" value="Insert" />
+    </form>
+    <form id="update">
+      <label>ID</label>
+      <input type="text" name="id" required />
+      <label>Name</label>
+      <input type="text" name="name" required />
+      <label>Author</label>
+      <input type="text" name="author" required />
+      <label>Pages</label>
+      <input type="number" name="numPages" required />
+      <input type="submit" value="Update" />
+    </form>
+    <form id="delete">
+      <label>ID</label>
+      <input type="text" name="id" required />
+      <input type="submit" value="Delete" />
+    </form>
+    <div>
+      <button onclick="prev()">Prev</button>
+      <button onclick="loadPage()">Load</button>
+      <button onclick="next()">Next</button>
+    </div>
+    <table style="border-collapse: collapse"></table>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
+      integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      console.clear();
+      let page = 1;
+      const insertForm = document.querySelector("#insert");
+      insertForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const formData = new FormData(insertForm);
+        axios
+          .post("http://localhost:8001/books", formData, {
+            headers: { "Content-Type": "application/json" },
+          })
+          .then((result) => {
+            console.log(result);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      });
+      const updateForm = document.querySelector("#update");
+      updateForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const formData = new FormData(updateForm);
+        axios
+          .put("http://localhost:8001/books/" + formData.get("id"), formData, {
+            headers: { "Content-Type": "application/json" },
+          })
+          .then((result) => {
+            console.log(result);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      });
+      const deleteForm = document.querySelector("#delete");
+      deleteForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const formData = new FormData(deleteForm);
+        axios
+          .delete("http://localhost:8001/books/" + formData.get("id"))
+          .then((result) => {
+            console.log(result);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      });
+
+      async function loadPage() {
+        const table = document.querySelector("table");
+        table.innerHTML = "";
+        const result = await axios.get(
+          "http://localhost:8001/books?_page=" + page
+        );
+        let header = `<tr>`;
+        for (const item in result.data.data[0]) {
+          header += `<th>${item}</th>`;
+        }
+        table.innerHTML += `${header}</tr>`;
+        for (const item of result.data.data) {
+          let row = `<tr>`;
+          for (const key in item) {
+            let value = item[key];
+            row += `<td style="border: 1px solid black;">${value}</td>`;
+          }
+          table.innerHTML += `${row}</tr>`;
+        }
+      }
+
+      function prev() {
+        page = page > 1 ? page - 1 : 1;
+        loadPage();
+      }
+      function next() {
+        page += 1;
+        loadPage();
+      }
+    </script>
+  </body>
+</html>
