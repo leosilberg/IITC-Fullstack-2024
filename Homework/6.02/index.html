@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const inventory = [
+        { id: 1, name: "Laptop", price: 1000 },
+        { id: 2, name: "Phone", price: 500 },
+        { id: 3, name: "Tablet", price: 800 },
+      ];
+      function arrayToObject(arr, key) {
+        return arr.reduce((obj, item) => {
+          obj[item[key]] = item;
+          return obj;
+        }, {});
+      }
+      console.log(arrayToObject(inventory, "id"));
+      const array1 = [1, 2, 3, 4, 5];
+      const array2 = [3, 4, 5, 6, 7];
+      function intersectArrays(arr1, arr2) {
+        return arr1.filter((val) => arr2.includes(val));
+      }
+      console.log(intersectArrays(array1, array2));
+      const duplicates = [1, 2, 2, 3, 4, 4, 5];
+      function uniqueValues(arr) {
+        return arr.reduce((temp, val) => {
+          if (!temp.includes(val)) {
+            temp.push(val);
+          }
+          return temp;
+        }, []);
+      }
+      console.log(uniqueValues(duplicates));
+      const employees = [
+        { name: "John Doe", department: "Engineering", yearsOfExp: 5 },
+        { name: "Jane Smith", department: "Marketing", yearsOfExp: 8 },
+        { name: "Peter Johnson", department: "Engineering", yearsOfExp: 5 },
+        { name: "Lucy Brown", department: "Marketing", yearsOfExp: 10 },
+        { name: "Mike Davis", department: "Engineering", yearsOfExp: 3 },
+        { name: "Sara Wilson", department: "Marketing", yearsOfExp: 8 },
+      ];
+      function groupBy(arr, key) {
+        return arr.reduce((obj, person) => {
+          obj[person[key]] = (obj[person[key]] ? obj[person[key]] : []).concat(
+            person
+          );
+          return obj;
+        }, {});
+      }
+
+      console.log(groupBy(employees, "department"));
+    </script>
+  </body>
+</html>
