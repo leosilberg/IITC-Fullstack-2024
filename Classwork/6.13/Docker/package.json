@@ -1,0 +1,17 @@
+{
+  "name": "app",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "bun ./bin/www.js",
+    "dev": "bun --hot ./bin/www.js"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.5",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.17.1",
+    "http-errors": "~1.7.2",
+    "morgan": "~1.10.0"
+  }
+}

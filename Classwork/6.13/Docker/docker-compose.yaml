@@ -1,0 +1,10 @@
+version: "3"
+services:
+   bun:
+     build: .
+     container_name: mybun_c1
+     ports:
+       - "3000:3000"
+     volumes:
+      - .:/src
+      - /src/node_modules
