@@ -1,7 +1,15 @@
+:root {
+  /* CSS HSL */
+  --jet: hsla(0, 0%, 21%, 1);
+  --caribbean-current: hsla(183, 31%, 34%, 1);
+  --white: hsla(0, 0%, 100%, 1);
+  --platinum: hsla(0, 0%, 85%, 1);
+  --indigo-dye: hsla(204, 42%, 27%, 1);
+}
 body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  background-color: var(--platinum);
 }
 ul,
 ol,
@@ -10,20 +18,105 @@ li {
   padding: 0;
   list-style: none;
 }
-
+input,
+select {
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--jet);
+}
+input:not([type="checkbox"]):focus,
+select:focus {
+  outline: none;
+  outline: 1.5px solid var(--indigo-dye);
+}
+button {
+  font: inherit;
+  border-radius: 1rem;
+  padding-inline: 1.5rem;
+  padding-block: 0.4rem;
+  color: var(--white);
+  cursor: pointer;
+}
+.app__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.todo__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 .todo__card {
   display: flex;
   padding: 1rem;
-  gap: 1rem;
+  justify-content: space-between;
   align-items: center;
+  gap: 1rem;
+  background-color: var(--white);
+  border-radius: 1rem;
 }
 
+.todo__button-delete {
+  background-color: var(--caribbean-current);
+  border: 1px solid var(--caribbean-current);
+}
 .completed {
   text-decoration: line-through;
 }
-
-form {
+.filter__container {
   display: flex;
-  padding: 1rem;
+  gap: 1rem;
+  justify-content: space-around;
+}
+.form__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--white);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.form__title {
+  color: var(--jet);
+  font-size: 1.2rem;
+}
+.form__button {
+  background-color: var(--indigo-dye);
+  border: 1px solid var(--indigo-dye);
+}
+form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.statistics__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--jet);
+  color: var(--white);
+  border-radius: 1rem;
+  padding: 2rem;
+  font-size: 1.4rem;
+}
+
+.statistics__container div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.statistics__progress {
+  min-width: 100%;
+}
+.fixed {
+  position: fixed;
+  top: 20px;
+  right: 50px;
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
 }
