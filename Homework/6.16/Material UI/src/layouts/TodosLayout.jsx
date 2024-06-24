@@ -18,7 +18,7 @@ export default function TodosLayout() {
         <Toolbar />
         <List>
           <ListItem>
-            <Link to="/todos/list/create">Create Todo</Link>
+            <Link to="/todos/create">Create Todo</Link>
           </ListItem>
         </List>
       </Drawer>

@@ -42,7 +42,7 @@ export default function CreateTodoPage(props) {
   const snackbar = useActionData();
   useEffect(() => {
     snackbar &&
-      navigate("/todos/list", {
+      navigate("/todos", {
         replace: true,
         state: { snackbar: snackbar },
       });

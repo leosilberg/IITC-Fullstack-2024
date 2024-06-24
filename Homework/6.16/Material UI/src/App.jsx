@@ -29,9 +29,12 @@ const router = createBrowserRouter([
             element: <TodosLayout />,
             children: [
               {
-                path: "list",
+                path: "",
                 element: <TodosPage />,
                 loader: todosLoader,
+                shouldRevalidate: (params) => {
+                  return params.nextUrl.pathname === "/todos";
+                },
                 children: [
                   {
                     path: "create",
