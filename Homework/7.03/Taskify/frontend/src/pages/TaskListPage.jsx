@@ -18,10 +18,10 @@ export default function TaskListPage() {
   const tasks = useLoaderData();
   const navigate = useNavigate();
   const pinnedTasks = useMemo(() => {
-    return tasks.filter((task) => task.isPinned);
+    return tasks?.filter((task) => task.isPinned);
   }, [tasks]);
   const unPinnedTasks = useMemo(() => {
-    return tasks.filter((task) => !task.isPinned);
+    return tasks?.filter((task) => !task.isPinned);
   }, [tasks]);
 
   return (

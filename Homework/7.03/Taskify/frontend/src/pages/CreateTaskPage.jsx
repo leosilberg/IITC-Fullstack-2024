@@ -24,7 +24,6 @@ export default function CreateTaskPage() {
   const { toast } = useToast();
 
   useEffect(() => {
-    console.log(`CreateTaskPage: `, navigation);
     if (navigation.state === "loading") {
       toast({ description: "New task added" });
     }

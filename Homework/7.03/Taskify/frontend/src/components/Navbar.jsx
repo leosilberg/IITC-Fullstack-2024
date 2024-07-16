@@ -29,7 +29,7 @@ function TextNavLink({ to, className, children }) {
 export default function Navbar() {
   const { user, logout } = useAuthContext();
   return (
-    <header className="sticky top-0 z-10 flex h-16 items-center gap-4 border-b bg-opacity-30 px-4 backdrop-blur-md backdrop-filter md:px-6">
+    <header className="sticky top-0 z-10 flex h-16 items-center gap-4 border-b bg-opacity-30 px-4 backdrop-blur-md backdrop-filter md:px-16">
       <nav className="flex w-full items-center gap-4 text-sm font-medium">
         <TextNavLink to="/">Home</TextNavLink>
         {user ? (
@@ -39,7 +39,7 @@ export default function Navbar() {
             <TextNavLink to="/about">About</TextNavLink>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Avatar className="ms-auto">
+                <Avatar className="ms-auto cursor-pointer">
                   <AvatarImage src="" />
                   <AvatarFallback>
                     {user.firstName[0] + user.lastName[0]}
