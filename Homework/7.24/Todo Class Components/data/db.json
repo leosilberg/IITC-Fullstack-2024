@@ -1,0 +1,34 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "title": "Buy groceries",
+      "completed": true
+    },
+    {
+      "id": "2",
+      "title": "Complete homework",
+      "completed": true
+    },
+    {
+      "id": "3",
+      "title": "Clean the house",
+      "completed": true
+    },
+    {
+      "id": "4",
+      "title": "Call the bank",
+      "completed": true
+    },
+    {
+      "id": "5",
+      "title": "Read a book",
+      "completed": false
+    },
+    {
+      "id": "8872",
+      "title": "test",
+      "completed": true
+    }
+  ]
+}
